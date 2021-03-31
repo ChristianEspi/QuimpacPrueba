@@ -1,0 +1,18 @@
+<app-cabecera></app-cabecera>
+<app-menu></app-menu>
+<section id="contenido">
+    <div id="admClie">
+        <div id="posi"><img src="../assets/ICONOS/bluc.png" width="40px" height="40px"></div>
+        <div id="titulo" class="text">Administración de Clientes</div>
+        <div id="posbtn"class="">
+            <input id="boton" type="button" class="btn btn-primary btn-block-xs-only" name="exportar" value="Exportar">
+            <input (click)="abriPopUp()"id="boton" type="button" class="btn btn-success btn-block-xs-only"name="nuevo" value="Nuevo">
+        </div>
+    </div>
+</section>
+<!-- Tabla de Clientes Angular-->
+<div id="tabla" class="container-fluid">
+  <app-tabla-cliente></app-tabla-cliente>
+</div>
+
+<!--Fin de la tabla de angular-->

@@ -1,0 +1,272 @@
+
+.ocul{
+	display: none;
+}
+/*popUpClie*/
+.popUpClie{
+		background: gray;
+    width: 50%;
+    z-index: 100;
+    left: 314px;
+    padding: 15px;
+    position: absolute;
+    top: 138px;
+		display: none;
+}
+.cerrar{
+	font-size: 15pt;
+	position:absolute;
+	right: 20px;
+	cursor: pointer;
+}
+.cerrarAc{
+	display: block;
+}
+.popUpClie label{
+	padding: 10px;
+}
+.cance{
+	margin: 10px;
+}
+.botones{
+	float: right;
+}
+
+/*tabla*/
+/* Structure */
+table {
+	width: 100%;
+}
+
+.mat-form-field {
+	font-size: 14px;
+	width: 100%;
+}
+
+/*Administrar Clientes*/
+/*contenido*/
+#contenido{
+	padding: 15px 30px 0px 152px;
+}
+#contenido.activ{
+	padding-left: 47px;
+}
+#admClie{
+	padding-top: 40px;
+}
+#posi{
+	float: left;
+	padding-top: 10px;
+}
+#pos{
+	float: left;
+
+}
+#titulo{
+	padding: 20px 0px 0px 12px;
+  color: #1B76BD;
+  font-size: 1.9rem;
+  float: left;
+}
+#posbtn{
+	float: right;
+}
+#boton{
+	margin:7px;
+	padding: 4px 39px 4px 39px;
+    font-size: 16pt;
+}
+#contendoTabla{
+	clear: both;
+	padding-top: 40px
+}
+/*Administrar Usuarios*/
+
+#subtitu{
+	clear: both;
+}
+#subtitu h2{
+	font-size: 20pt;
+}
+#btn_retroceder{
+	text-decoration: none;
+    font-size: 30pt;
+    font-family: monospace;
+}
+#admUsua{
+	padding-top: 40px;
+}
+#borde{
+	border-radius: 15px;
+    height: 39px;
+    margin-left: 43px;
+}
+#tamanio{
+	font-size: 16pt;
+    width: 39%;
+}
+#editar input{
+	border-radius: 50px;
+}
+#linea{
+	background: gray;
+	height: 20px;
+	margin: 31px -30px 21px -150px;
+}
+#espaciado{
+	margin: 0px 8px 28px 0px;
+}
+/*solicitud0*/
+#soli{
+	padding-top: 40px;
+}
+#tab1{
+	float: left;
+	margin-right: 85px;
+    font-size: 20pt;
+    cursor: pointer;
+}
+#tab2{
+    font-size: 20pt;
+    cursor: pointer;
+}
+
+#inferio {
+    padding-top: 32pc;
+}
+/*tabla*/
+#tabla{
+	width:100%;
+	overflow-x:scroll;
+	white-space:nowrap;width:100%;
+	padding: 45px 30px 0px 154px;
+}
+/*tamaño*/
+
+@media (max-width: 1158px){
+	#titu h2{
+		margin: auto;
+	}
+	#btn_modificar{
+		margin-right: 0px;
+		width: 100%;
+	}
+}
+@media (max-width: 1371px){
+	.row.mt-2{
+		display: block;
+	}
+	#tamanio{
+		width: 100%;
+	}
+	#borde{
+		margin-left: 0px;
+		min-width: 240px;
+	}
+}
+
+@media (max-width: 987px){
+	#titulo{
+		padding: 20px 0px 0px 12px;
+		float: left;
+	}
+	#boton{
+		margin: 7px;
+		padding: 3px 8px 3px 7px;
+		font-size: 10pt;
+		text-align: center;
+		width: 78px;
+	}
+	#cos1{
+		width: 50%;
+	}
+	#cos2{
+		width: 50%;
+	}
+	#cos3{
+		width: 100%;
+	}
+	#posbtn{
+		padding-right: 0%;
+		top: 118px;
+		right: 0px;
+		position: absolute;
+	}
+}
+
+@media (max-width: 713px){
+	#posbtn{
+		padding-right: 0%;
+		top: 72px;
+	}
+	#boton{
+		margin: 7px;
+		padding: 3px 8px 3px 7px;
+		font-size: 10pt;
+		text-align: center;
+		width: 78px;
+	}
+	#fecha{
+		font-size: 14pt;
+		width: 60%;
+    	text-align: right;
+    	padding-top: 3%;
+    	position: absolute;
+    	left: 42%;
+	}
+	#menu{
+		display: none;
+	}
+	.menu_bar{
+		position: relative;
+		display: block;
+		float: left;
+    	width: 25px;
+    	margin:10px;
+
+	}
+	#titulo{
+		padding: 20px 0px 0px 12px;
+		font-size: 22px;
+	}
+	.centrar{
+		margin: 0px 11px 0px 11px;
+	}
+	#cos1{
+		width: 100%;
+	}
+	#cos2{
+		width: 100%;
+	}
+	#cos3{
+		width: 100%;
+	}
+	#cabecera{
+		padding-left:10px;
+	}
+	#contenido{
+		padding-left:20px;
+	}
+	#tabla{
+		padding: 15px 30px 0px 0px;
+	}
+}
+@media (max-width: 600px){
+	#formulario{
+		margin:auto;
+		padding-left: 50px;
+	}
+	.text{
+		text-align: center;
+	}
+}
+@media (max-width: 360px){
+	#titulo{
+		font-size: 20px;
+	}
+}
+@media (max-width: 320px){
+	#titulo{
+		font-size: 18px;
+	}
+}

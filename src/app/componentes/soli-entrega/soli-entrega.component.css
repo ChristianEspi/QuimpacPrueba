@@ -1,0 +1,248 @@
+html, body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.ocul{
+	display: none;
+}
+
+#contenido{
+	position: relative;
+	width: 100%;
+	padding: 15px 30px 0px 152px;
+}
+#contenido.activ{
+	padding-left: 47px;
+}
+#admClie{
+	padding-top: 40px;
+}
+#posi{
+	float: left;
+	padding-top: 10px;
+}
+#pos{
+	float: left;
+
+}
+#titulo{
+	padding: 20px 0px 0px 12px;
+  color: #1B76BD;
+  font-size: 1.9rem;
+  float: left;
+}
+#posbtn{
+	float: right;
+}
+#boton{
+	margin:7px;
+	padding: 4px 39px 4px 39px;
+  font-size: 16pt;
+}
+#contendoTabla{
+	clear: both;
+	padding-top: 40px
+}
+/*Administrar Usuarios*/
+
+#subtitu{
+	clear: both;
+}
+#subtitu h2{
+	font-size: 20pt;
+}
+#btn_retroceder{
+	text-decoration: none;
+    font-size: 30pt;
+    font-family: monospace;
+}
+#admUsua{
+	padding-top: 40px;
+}
+#borde{
+	border-radius: 15px;
+    height: 39px;
+    margin-left: 43px;
+}
+#tamanio{
+	font-size: 16pt;
+    width: 39%;
+}
+#linea{
+	background: #C9C9C9;
+	height: 10px;
+	position: relative;
+	clear: both;
+	top: 25px;
+}
+#linea p{
+	text-align: center;
+}
+#espaciado{
+	margin: 0px 8px 28px 0px;
+}
+/*solicitud0*/
+#soli{
+	padding-top: 40px;
+}
+#tab1{
+	float: left;
+	margin-right: 35px;
+  font-size: 20pt;
+  cursor: pointer;display: flex;
+}
+#tab2{
+  font-size: 20pt;
+  cursor: pointer;
+	float: left;
+}
+
+#inferio {
+  padding-top: 32pc;
+}
+/*tabla*/
+#tabla{
+	width:100%;
+	overflow-x:scroll;
+	white-space:nowrap;
+	padding: 40px 20px 0px 147px;
+}
+/*tamaño*/
+
+@media (max-width: 1158px){
+	#titu h2{
+		margin: auto;
+	}
+	#btn_modificar{
+		margin-right: 0px;
+		width: 100%;
+	}
+}
+@media (max-width: 1371px){
+	.row.mt-2{
+		display: block;
+	}
+	#tamanio{
+		width: 100%;
+	}
+	#borde{
+		margin-left: 0px;
+		min-width: 240px;
+	}
+}
+@media (max-width: 1137px){
+	#posbtn{
+		padding-right: 0%;
+	}
+
+}
+
+@media (max-width: 987px){
+	#titulo{
+		padding: 20px 0px 0px 12px;
+		float: left;
+	}
+	#boton{
+		margin: 11px;
+		padding: 6px 3px 5px 5px;
+		font-size: 10pt;
+		text-align: center;
+		width: 127px;
+	}
+	#cos1{
+		width: 50%;
+	}
+	#cos2{
+		width: 50%;
+	}
+	#cos3{
+		width: 100%;
+	}
+	#posbtn{
+		padding-right: 0%;
+		top: 13px;
+		right: 0px;
+		position: absolute;
+	}
+}
+@media (max-width: 713px){
+
+	#fecha{
+		font-size: 14pt;
+		width: 60%;
+  	text-align: right;
+  	padding-top: 3%;
+  	position: absolute;
+  	left: 42%;
+	}
+
+	#boton{
+		margin: 11px;
+		padding: 6px 3px 5px 5px;
+		font-size: 10pt;
+		text-align: center;
+		width: 127px;
+	}
+	#menu{
+		display: none;
+	}
+	#titulo{
+		padding: 20px 0px 0px 12px;
+		font-size: 22px;
+	}
+	.menu_bar{
+		position: relative;
+		display: block;
+		float: left;
+  	width: 25px;
+  	margin:10px;
+	}
+	.centrar{
+		margin: 0px 11px 0px 11px;
+	}
+	#cos1{
+		width: 100%;
+	}
+	#cos2{
+		width: 100%;
+	}
+	#cos3{
+		width: 100%;
+	}
+	#cabecera{
+		padding-left:10px;
+	}
+	#contenido{
+		padding-left:20px;
+	}
+	#tabla{
+		padding: 37px 0px 0px 0px;
+	}
+}
+@media (max-width: 600px){
+	#formulario{
+		margin:auto;
+		padding-left: 50px;
+	}
+	.text{
+		text-align: center;
+	}
+	#tab1{
+		margin-right: 9px;
+		font-size: 1.5em;
+	}
+	#tab2{
+		font-size: 1.5em;
+	}
+}
+@media (max-width: 360px){
+	#titulo{
+		font-size: 20px;
+	}
+}
+@media (max-width: 320px){
+	#titulo{
+		font-size: 18px;
+	}
+}

@@ -1,0 +1,375 @@
+
+.ocul{
+	display:none;
+}
+/*Validacion*/
+.alert-danger{
+	color: red;
+  background: #ffbbbb;
+  margin: 5px;
+}
+.container.error.message{
+	padding: 3px;
+}
+/*popUp*/
+.ventana{
+    position: absolute;
+    background: #E5E5E5;
+    z-index: 2;
+    left: 29%;
+    width: 50%;
+    min-width: 339px;
+    top: 12%;
+    border-radius: 29px;
+		display: none;
+}
+
+.ventanaRol{
+    position: absolute;
+    background: #cccccc;
+    z-index: 2;
+    left: 29%;
+    width: 50%;
+    min-width: 339px;
+    top: 18%;
+    border-radius: 29px;
+		display: none;
+		z-index: 100;
+}
+
+.abrir{
+	display: block;
+}
+.abrir2{
+	display: block;
+}
+.centrar{
+	margin:auto;
+	clear: both;
+}
+
+#titu{
+	margin:20px;
+	margin-top: 43px;
+}
+#titu h2{
+	float: left;
+	margin-left: 90px;
+	color: blue;
+}
+#btn_modificar{
+	float: right;
+	margin-right: 109px;
+}
+#btn_rol{
+	margin: 0px 10px 10px;
+	float: right;
+	position: relative;
+}
+.close{
+	float: right;
+	position: relative;
+	bottom: 19px;
+	width: 23px;
+}
+#btn_modificarClie{
+	float: right;
+	margin-right: 57px;
+}
+#cle{
+	margin-block: 105px;
+}
+#rol{
+	margin-block: 105px;
+	margin: 50px;
+}
+/*contenido*/
+#contenido{
+	position: relative;
+	width: 100%;
+	padding: 15px 30px 0px 152px;
+}
+#contenido.activ{
+	padding-left: 47px;
+}
+#admClie{
+	padding-top: 40px;
+}
+#posi{
+	float: left;
+	padding-top: 10px;
+}
+#pos{
+	float: left;
+
+}
+#titulo{
+	padding: 7px 0px 0px 12px;
+    color: #1B76BD;
+    float: left;
+	font-size: 1.5rem;
+}
+#posbtn{
+	float: right;
+}
+#boton{
+	margin:7px;
+	padding: 4px 39px 4px 39px;
+    font-size: 16pt;
+}
+#contendoTabla{
+	clear: both;
+	padding-top: 40px
+}
+/*Administrar Usuarios*/
+
+#subtitu{
+	clear: both;
+}
+#subtitu h2{
+	font-size: 20pt;
+}
+#btn_retroceder{
+	text-decoration: none;
+    font-size: 30pt;
+    font-family: monospace;
+}
+#admUsua{
+	padding-top: 40px;
+}
+#borde{
+	border-radius: 15px;
+  height: 39px;
+  margin-left: 43px;
+}
+#editarUsua input{
+	border-radius: 50px;
+}
+#editarUsua select{
+	border-radius: 50px;
+}
+#tamanio{
+	font-size: 16pt;
+    width: 39%;
+}
+#linea{
+	background: #C9C9C9;
+	height: 20px;
+	margin: 31px -30px 21px -150px;
+}
+#espaciado{
+	margin: 0px 8px 28px 0px;
+}
+
+#inferio {
+    padding-top: 32pc;
+}
+#tabla{
+	width:100%;
+	overflow-x:scroll;
+	white-space:nowrap;width:100%;
+	padding: 15px 30px 0px 154px;
+}
+
+/*tamaño*/
+
+@media (max-width: 1158px){
+	#titu h2{
+		margin: auto;
+	}
+	#btn_modificar{
+		margin-right: 0px;
+		width: 100%;
+	}
+	#btn_modificarClie{
+		margin-right: 0px;
+		width: 100%;
+	}
+
+}
+@media (max-width: 1371px){
+	.row.mt-2{
+		display: block;
+	}
+	#tamanio{
+		width: 100%;
+	}
+	#editarUsua input{
+		margin-left: 0px;
+		min-width: 240px;
+	}
+}
+@media (max-width: 987px){
+	#titulo{
+		float: left;
+		font-size: 17pt;
+		padding-top: 4px;
+	}
+	#btn_retroceder{
+		font-size: 3.5vh;
+	}
+	#boton{
+		margin: 7px;
+		padding: 3px 8px 3px 7px;
+		font-size: 10pt;
+		text-align: center;
+		width: 78px;
+	}
+	#cos1{
+		width: 50%;
+	}
+	#cos2{
+		width: 50%;
+	}
+	#cos3{
+		width: 100%;
+		display: flex;
+
+	}
+	#cos3 #espaciado{
+		flex-grow: 1;
+	}
+	#posbtn{
+		padding-right: 0%;
+		top: 13px;
+		right: 0px;
+		position: absolute;
+	}
+
+}
+@media (max-width: 713px){
+	#titulo{
+		font-size: 11pt;
+	}
+	#posbtn{
+		padding-right: 0%;
+	}
+	#boton{
+		margin: 7px;
+		padding: 3px 8px 3px 7px;
+		font-size: 10pt;
+		text-align: center;
+		width: 78px;
+	}
+
+	#tabla{
+		padding: 20px;
+	}
+	#menu{
+		display: none;
+	}
+	.centrar{
+		margin: 0px 11px 0px 11px;
+	}
+	#contenido{
+		padding-left:20px;
+	}
+}
+@media (max-width: 600px){
+	#titulo{
+		font-size: 11pt;
+	}
+	#formulario{
+		margin:auto;
+		padding-left: 50px;
+	}
+	.text{
+		text-align: center;
+	}
+	#tamanio{
+		padding: 5px;
+		font-size:9pt;
+	}
+	#editarUsua input{
+		min-width: 157px;
+		height: 24px;
+		font-size: 10pt;
+	}
+	#editar input{
+		border-radius: 50px;
+	}
+	#cos1{
+		width: 50%;
+	}
+	#cos2{
+		width: 50%;
+	}
+	#cos3{
+		width: 100%;
+		display: flex;
+	}
+	#cos3 #espaciado{
+		flex-grow: 1;
+	}
+	.esp{
+		padding-left: 31px;
+	}
+	#espaciado{
+		margin: 0px 11px 0px 0px;
+	}
+	#posbtn{
+		padding-right: 0%;
+		top: 13px;
+		right: 0px;
+		position: absolute;
+	}
+	#boton{
+		margin: 7px;
+		padding: 3px 8px 3px 7px;
+		font-size: 10pt;
+		text-align: center;
+		width: 78px;
+	}
+	input::placeholder{
+		color: transparent;
+	}
+	#subtitu{
+		padding-top:5px;
+	}
+	#subtitu h2{
+		font-size: 14pt;
+		margin: 0px;
+	}
+	#editarUsua{
+		bottom: 30px;
+		position: relative;
+	}
+	#linea{
+		margin: -11px -30px 21px -150px;
+	}
+}
+@media(max-width: 375px){
+	.esp{
+		padding-left: 15px;
+	}
+}
+@media(max-width: 360px){
+	.esp{
+		padding-left: 5px;
+	}
+}
+@media(max-width: 340px){
+	#cos1{
+		width: 100%;
+	}
+	#cos2{
+		width: 100%;
+	}
+	#cos3{
+		width: 100%;
+		display: block;
+	}
+	#titulo{
+		font-size: 9pt;
+		padding-top: 7px;
+	}
+	#posbtn{
+		padding-right: 0%;
+		top: 13px;
+		right: 0px;
+		position: absolute;
+	}
+	#subtitu h2{
+		font-size: 10pt;
+	}
+}

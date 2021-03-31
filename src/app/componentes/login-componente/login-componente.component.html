@@ -1,0 +1,41 @@
+<section class="side">
+  <img src="../assets/ICONOS/fondo3.png" class="img-fluid"with="100%">
+</section>
+<section class="sideC">
+  <img src="../assets/ICONOS/FONDO 1.png" class="img-fluid"with="100%">
+</section>
+<section class="main">
+  <div class="login-container">
+      <p class="title-logo"><img src="../assets/LOGO/LLOGO COLOR.png" width="100%"></p>
+      <p class="title">ECUADOR S.A.</p>
+      <p class="welcome-message">LOGIN</p>
+      <form [formGroup]="loginForm" class="login-form">
+        <div class="alert alert-danger" style ="padding:13px;margin:10px; text-align:center" *ngIf="isError" role="alert">
+        Usuario y Contraseña incorrecta
+        </div>
+          <div style="padding: 0px 0px 20px;">
+              <label id="espaciad">Usuario</label>
+              <input
+              type="text"
+              formControlName="username"
+              name="usuario"
+              placeholder="Username"
+              required
+              />
+          </div>
+          <mat-error class="alert text-danger" *ngIf="isValidField('username')" style="padding: 0px 0px 20px;">
+            {{getErrorMessage('username')}}
+          </mat-error>
+          <div style="padding: 0px 0px 20px;">
+              <label id="espaciad">Contraseña</label>
+              <input matInput placeholder="Password" type="password" formControlName="password" required>
+          </div>
+          <mat-error class="text-danger" *ngIf="isValidField('password')">
+            {{getErrorMessage('password')}}
+          </mat-error>
+
+          <button
+          class="submit" type="submit" (click)="login()">Ingresar</button>
+      </form>
+  </div>
+</section>

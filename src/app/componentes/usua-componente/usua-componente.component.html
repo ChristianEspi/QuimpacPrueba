@@ -1,0 +1,235 @@
+
+<!--Modificar Usario-->
+<form [formGroup]="formRol">
+  <div id=""[ngClass]="{'abrir':flag4}" class="ventanaRol">
+    <div class="alert alert-danger" style ="padding:13px;margin:auto;top:8px;text-align:center;width:50%;" *ngIf="isErrorRol" role="alert">
+      Ingrese rol
+    </div>
+      <div id="titu">
+          <div>
+          <div>
+              <h2>Nuevo Rol</h2>
+          </div>
+          <button [ngClass]="{'abrir': flag4}" (click)="cerrarPopRol()" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div>
+              <input id="btn_modificar" style="margin:10px"[ngClass]="{'ocul': flagPer}" (click)="guardarRol()" type="button" class="btn btn-primary btn-block-xs-only " value="Guar. Rol">
+              <input id="btn_modificar" style="margin:10px"[ngClass]="{'ocul': !flagPerG}"(click)="crearRolPermiso()" type="button" class="btn btn-primary btn-block-xs-only " value="Guar. Per.">
+              <input id="btn_modificar" style="margin:10px"[ngClass]="{'ocul': !flagPerM}"(click)="actualizarRolPermiso()" type="button" class="btn btn-primary btn-block-xs-only " value="Modif.RolPer">
+              <input id="btn_modificar" style="margin:10px"[ngClass]="{'ocul': flagRolM}"  type="button" class="btn btn-primary btn-block-xs-only" (click)="actualizaRol()" value="Guar.Cambios">
+          </div>
+          </div>
+      </div>
+      <div>
+          <div  class="" id="rol">
+            <div class="col-md-9 centrar">
+                <div class="form-group row mt-2" id="espaciado">
+                    <input type="hidden" class="col-12 col-md form-control" formControlName="rol_cod" placeholder="usu_cod_usu">
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Rol</label>
+                    <input type="text" class="col-12 col-md form-control" formControlName="rol_nom" placeholder="Rol">
+                </div>
+                <mat-error class="text-danger" *ngIf="isValidrol('rol_nom')">
+                  {{error('rol_nom')}}
+                </mat-error>
+            </div>
+            <!--Tabla Rol Permiso-->
+            <div class="c"[ngClass]="{'ocul': flagPer}">
+              <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" style="padding-top:10px" class="table datatable table-bordered row-border hover">
+                <thead>
+                  <tr style="background:#E5E5E5">
+                    <th></th>
+                    <th>Nombre</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let e of rol">
+                    <td><a [routerLink] = "['/']"><img id="imagen" src="../assets/ICONOS/blue.png" (click)="edirol(e.rol_cod)" width="20px" height="20px"></a></td>
+                    <td>{{ e.rol_nom }}</td>
+                    <td>{{ e.rol_est }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--Permisos-->
+            <form [formGroup]="formCheck" class="ocul"[ngClass]="{'abrir': flagPer}">
+              <div *ngFor="let e of permisos" class="form-group row mt-2" id="espaciado">
+                  <label style="font-size:21px;margin-top:10px">
+                    <input (change)="onCheck($event.target.checked, e.id)" type="checkbox" id="cbox1" value="e.id" [checked]="e.check">
+                        {{e.descripcion}}
+                  </label>
+              </div>
+            </form>
+        </div>
+      </div>
+  </div>
+</form>
+<!--Modificar Usario-->
+<form [formGroup]="formUsuario">
+  <div id=""[ngClass]="{'abrir': flag2}" class="ventana">
+      <div id="titu">
+          <div>
+          <div>
+              <h2>Datos del usuario</h2>
+          </div>
+          <button [ngClass]="{'abrir': flag2}" (click)="cerrarPop()" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div>
+              <input id="btn_modificar" [ngClass]="{'ocul': !flag}" (click)="guardarUsua()" type="button" class="btn btn-primary btn-block-xs-only " value="Guardar">
+              <input id="btn_rol" [ngClass]="{'ocul': !flag}" (click)="nuevoRol()" type="button" class="btn btn-primary btn-block-xs-only " value="Nuevo Rol">
+              <input id="btn_modificar" [ngClass]="{'ocul': flag}" (click)="actualizarUsuario()" type="button" class="btn btn-primary btn-block-xs-only " value="Modificar">
+          </div>
+          </div>
+      </div>
+      <div>
+          <div  class="" id="cle">
+            <div class="col-md-9 centrar">
+                <div class="form-group row mt-2" id="espaciado">
+                    <input type="hidden" class="col-12 col-md form-control" formControlName="usu_cod_usu" placeholder="usu_cod_usu">
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Nombre y apellidos</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="usu_nom_ape" placeholder="Nombre y apellidos">
+                    <div class="alert-danger" *ngIf="usu_nom_ape.invalid &&(usu_nom_ape.dirty || usu_nom_ape.touched)">
+                      <div class="container-error-message">
+                          Nombre y apellidos requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Cód.SAP</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="usu_cod_sap" placeholder="Cód.SAP" disabled>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Email</label>
+                    <input type="email"  class="col-12 col-md form-control" formControlName="usu_cor" placeholder="email">
+                    <div class="alert-danger" *ngIf="usu_cor.invalid &&(usu_cor.dirty || usu_cor.touched)">
+                      <div class="container-error-message">
+                          Email requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Usuario</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="usu_usu" placeholder="Usuario"/>
+                    <div class="alert-danger" *ngIf="usu_usu.invalid &&(usu_usu.dirty || usu_usu.touched)">
+                      <div class="container-error-message">
+                          Usuario requerido
+                      </div>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Clave</label>
+                    <input type="password"  class="col-12 col-md form-control" formControlName="usu_cla" placeholder="Clave">
+                    <div class="alert-danger" *ngIf="usu_cla.invalid &&(usu_cla.dirty || usu_cla.touched)">
+                      <div class="container-error-message">
+                          Clave requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio"class="col-12 col-md-4 font-weight-bold">Estado</label>
+                  <!--  <input type="text"class="col-12 col-md form-control" formControlName="usu_est" placeholder="Estado">-->
+                    <select  formControlName="usu_est" class="mx-2 col-12 col-md form-control" name="estado">
+                      <option [value]="1" [selected]='true'>Activo</option>
+                    </select>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Rol</label>
+                      <select class="mx-2 col-12 col-md form-control" formControlName="usu_cod_rol" name="rol">
+                        <option *ngFor="let e of rol" [value]="e.rol_cod" >{{e.rol_nom}}</option>
+                      </select>
+                      <div class="alert-danger" *ngIf="usu_cod_rol.invalid &&(usu_cod_rol.dirty || usu_cod_rol.touched)">
+                        <div class="container-error-message">
+                            Seleccione un rol
+                        </div>
+                      </div>
+                </div>
+
+            </div>
+        </div>
+      </div>
+  </div>
+</form>
+<!--Clear Usuario-->
+<app-cabecera></app-cabecera>
+<app-menu></app-menu>
+<section id="contenido">
+    <div id="admUsua">
+        <div id="pos"><a style="color:#1B76BD" [routerLink] = "['/usuaCliente']" id="btn_retroceder"><</a></div>
+        <div id="titulo" class="text">001234000 - INVERSIONES LA PLATA S.A.C</div>
+        <div id="posbtn" class="">
+            <p>
+                <!--<input id="boton" type="button" (click)='clienteEditar()' class="btn btn-primary btn-block-xs-only" name="modificar" value="Modificar">-->
+                <input id="boton" type="button" (click)="abrirPop()" class="btn btn-success btn-block-xs-only"name="nuevo" value="Nuevo Usuario">
+            </p>
+        </div>
+    </div>
+    <div>
+        <div id="subtitu">
+            <h2>Datos del Cliente</h2>
+        </div>
+    </div>
+        <div id="editarUsua">
+            <div class="">
+                <div class="col-12 mt-4">
+                    <p class="mb-1 h5"></p>
+                    <div></div>
+                    <div class="row">
+                        <div class="col-12 col-md-4"id="cos1">
+                            <div class="row mt-2" id="espaciado">
+                                <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Razón social</label>
+                                <input type="text"[(ngModel)]="cliente.cli_raz_soc" class="col-12 col-md form-control"  placeholder="Razon social" disabled>
+                            </div>
+                            <div class="row mt-2" id="espaciado">
+                                <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Puesto planificación</label>
+                                <input type="text" class="col-12 col-md form-control" [(ngModel)]="cliente.cli_pue_pla" placeholder="Puesto planificación" disabled>
+                            </div>
+                            <div class="row mt-2" id="espaciado">
+                                <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Centro</label>
+                                <input type="text" class="col-12 col-md form-control" [(ngModel)]="cliente.cli_cen" placeholder="Centro" disabled>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4" id="cos2">
+                            <div class="row mt-2" id="espaciado">
+                                <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Cód.SAP</label>
+                                <input type="text" class="mx-2 col-12 col-md form-control" [(ngModel)]="cliente.cli_cod_sap" placeholder="Cod.SAP" disabled>
+                            </div>
+                            <div class="row mt-2" id="espaciado">
+                                <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Puesto expedición</label>
+                                <input type="text" class="mx-2 col-12 col-md form-control" [(ngModel)]="cliente.cli_pue_exp" placeholder="Puesto expedición" disabled>
+                            </div>
+                            <div class="row mt-2" id="espaciado">
+                                <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Estado</label>
+                                <select [(ngModel)]="cliente.cli_est" class="mx-2 col-12 col-md form-control" name="estado" disabled>
+                                  <option value="1">Activo</option>
+                                  <option value="2">Inactivo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4" id="cos3">
+                            <div class="row mt-2 es" id="espaciado">
+                                <label id="tamanio" class="col-12 col-md-4 font-weight-bold ">Organización de ventas</label>
+                                <input type="text" class="col-12 col-md form-control tamnioinp" [(ngModel)]="cliente.cli_org_ven" placeholder="Organizacion de ventas" disabled>
+                            </div>
+                            <div class="espa row mt-2 esp" id="espaciado">
+                                <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Ruta</label>
+                                <input type="text" class="col-12 col-md form-control" [(ngModel)]="cliente.cli_rut" placeholder="Ruta" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="linea">
+            <p class="text-center">---------</p>
+        </div>
+</section>
+        <div id="tabla" class="container-fluid">
+          <app-tabla-usuario [data]="usuario"></app-tabla-usuario>
+        </div>

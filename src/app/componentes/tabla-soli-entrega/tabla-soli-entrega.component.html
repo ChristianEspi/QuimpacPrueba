@@ -1,0 +1,28 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" style="padding-top:10px" class="table datatable table-bordered row-border hover">
+  <thead>
+    <tr style="background:#E5E5E5">
+      <th><input style="margin: 0px 10px;" type="checkbox" name="material" value="material"/>Material</th>
+      <th>Un.de medida</th>
+      <th>Almacén</th>
+      <th>Lote</th>
+      <th>Cantidad</th>
+      <th>Chofer</th>
+      <th>Nombre de Chofer</th>
+      <th>RUT</th>
+      <th>Placa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of data">
+      <td><input style="margin: 0px 10px;" type="checkbox" name="material" value="material"/>{{ e.employee_name }}</td>
+      <td>{{ e.employee_name }}</td>
+      <td>{{ e.employee_name }}</td>
+      <td>{{ e.employee_name }}</td>
+      <td>{{ e.employee_name }}</td>
+      <td>{{ e.employee_name }}</td>
+      <td>{{ e.employee_name }}</td>
+      <td>{{ e.employee_name }}</td>
+      <td>{{ e.employee_name }}</td>
+    </tr>
+  </tbody>
+</table>

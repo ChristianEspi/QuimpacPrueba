@@ -1,0 +1,27 @@
+<app-cabecera></app-cabecera>
+<app-menu></app-menu>
+<section id="contenido">
+    <div id="soli">
+        <div id="posi"><a href="#"><img src="../assets/ICONOS/Capa 8 copia.png" width="40px" height="40px"></a></div>
+        <div id="titulo" class="text">SOLICITUD DE ENTREGA</div>
+        <div id="posbtn">
+            <p>
+                <input id="boton" type="button" class="btn btn-danger btn-block-xs-only" name="modificar" value="Cancelar">
+                <input id="boton" type="button" class="btn btn-success btn-block-xs-only"name="nuevo" value="Generar solicitud">
+            </p>
+        </div>
+    </div>
+    <div id="subtitu" class="tabs-container mb-info-underline aline text">
+        <div id="tab1" class="tab js-tab h5 p-1 p-sm-2 mb-0 active"
+            onclick="">Crear Nuevo</div>
+        <div id="tab2" class="tab js-tab h5 p-1 p-sm-2 mb-0"
+            onclick="">Historial</div>
+    </div>
+</section>
+<div id="tbCrearNuevo" class="">
+    <div id="linea">
+    </div>
+    <div id="tabla"class="container-fluid">
+      <app-tabla-soli-entrega></app-tabla-soli-entrega>
+    </div>
+</div>

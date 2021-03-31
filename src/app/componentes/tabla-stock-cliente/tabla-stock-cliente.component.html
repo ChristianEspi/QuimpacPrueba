@@ -1,0 +1,24 @@
+<table datatable [dtOptions]="dtOptions" style="padding-top:10px" class="table datatable table-bordered row-border hover">
+  <thead>
+    <tr style="background:#E5E5E5">
+      <th>Descripción tanque</th>
+      <th>Material</th>
+      <th>Descripción Material</th>
+      <th>Lote</th>
+      <th>Fecha Movimiento</th>
+      <th>Servicio Prestado</th>
+      <th>Orden</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of data">
+      <td>{{ e.stk_cli_des_alm }}</td>
+      <td>{{ e.stk_cli_num_mat }}</td>
+      <td>{{ e.stk_cli_des_mat }}</td>
+      <td>{{ e.stk_cli_num_lot }}</td>
+      <td>{{ e.stk_cli_fec_mov }}</td>
+      <td>{{ e.stk_cli_ser_pre }}</td>
+      <td>{{ e.stk_cli_ord }}</td>
+    </tr>
+  </tbody>
+</table>

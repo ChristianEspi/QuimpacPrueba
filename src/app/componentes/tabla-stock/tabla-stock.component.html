@@ -1,0 +1,31 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" style="padding-top:10px" class="table datatable table-bordered row-border hover">
+  <thead>
+    <tr style="background:#E5E5E5">
+      <th>Descripción tanque</th>
+      <th>Material</th>
+      <th>Descripción Material</th>
+      <th>UMB</th>
+      <th>Lote</th>
+      <th>Stock Disponible</th>
+      <th>Stock no nacionalizado</th>
+      <th>Stock en transito</th>
+      <th>Stock Bloqueado</th>
+      <th>Stock Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of data">
+
+      <td>{{ e.stk_cod_alm }}</td>
+      <td>{{ e.stk_num_mat }}</td>
+      <td>{{ e.stk_des_mat }}</td>
+      <td>{{ e.stk_uni_med }}</td>
+      <td>{{ e.stk_num_lot }}</td>
+      <td>{{ e.stk_sto_dispo }}</td>
+      <td>{{ e.stk_sto_noD }}</td>
+      <td>{{ e.stk_sto_tra }}</td>
+      <td>{{ e.stk_sto_blo }}</td>
+      <td>{{ e.stk_est }}</td>
+    </tr>
+  </tbody>
+</table>

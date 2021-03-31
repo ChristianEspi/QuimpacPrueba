@@ -1,0 +1,66 @@
+<app-cabecera></app-cabecera>
+<app-menu></app-menu>
+<section id="contenido">
+    <div id="soli">
+        <div id="posi"><a href="#"><img src="../assets/ICONOS/Capa 11 copia 3.png" width="40px" height="40px"></a></div>
+        <div id="titulo" class="text">Ordenes</div>
+        <div class="btnStock">
+          <input type="submit"(click)="buscarStockOrden()" class="btn btn-primary form-control desctanq" name="btnStock" value="Buscar"/>
+        </div>
+    </div>
+    <div [formGroup]="enviaOrden" class="filtro">
+        <div class="DesSelector">
+          <label class="font-weight-bold">Desc.Material:</label>
+          <input class="form-control" formControlName="des_mat" name="des_mat">
+        </div>
+        <div class="SvcPres">
+          <label class="font-weight-bold">Serv.Prestamo:</label>
+          <input class="form-control"formControlName="val_2" name="val_2">
+        </div>
+        <div class="Origen">
+          <label class="font-weight-bold">Origen:</label>
+          <input class="form-control" formControlName="ori" name="ori">
+        </div>
+        <div class="Destino">
+          <label class="font-weight-bold">Destino:</label>
+          <input class="form-control" formControlName="des" name="des">
+        </div>
+        <div class="Estado">
+          <label class="font-weight-bold">Estado:</label>
+          <input class="form-control" formControlName="est" name="est">
+        </div>
+        <div class="fecIni">
+          <label class="font-weight-bold">Fecha Plan Inicio:</label>
+          <div id="sepa">
+            <div id="fechaDes">
+              <label id="des" class="font-weight-bold">desde:</label>
+              <input class="form-control" type="date"  formControlName="fec_pla_ini_des" name="fec_pla_ini_des" value="fec_pla_ini_has">
+            </div>
+            <div id="fechahas">
+              <label id="des" class="font-weight-bold">Hasta:</label>
+              <input class="form-control" type="date"  formControlName='fec_pla_ini_has' name="fec_pla_ini_has" value="fec_pla_ini_has">
+            </div>
+          </div>
+        </div>
+        <div class="fechaRealIni">
+          <label class="font-weight-bold">Fecha Real Inicio:</label>
+          <div id="sepa">
+            <div id="fechaDes">
+              <label id="des" class="font-weight-bold">desde:</label>
+              <input class="form-control" type="date" formControlName="fec_rea_ini_des" name="fec_rea_ini_des" value="fec_pla_ini_has">
+            </div>
+            <div id="fechahas">
+              <label id="des" class="font-weight-bold">Hasta:</label>
+              <input class="form-control" type="date" formControlName="fec_rea_ini_has" name="fec_rea_ini_has" value="fechaActual">
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+<div id="tbCrearNuevo" class="">
+    <div id="linea">
+    </div>
+    <div id="tabla"class="container-fluid">
+      <app-tabla-stock-ordenes [data]="stockOrden"></app-tabla-stock-ordenes>
+    </div>
+</div>

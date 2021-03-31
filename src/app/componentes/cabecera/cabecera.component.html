@@ -1,0 +1,37 @@
+<header>
+    <div id="cabecera">
+        <div id="logoTipo">
+            <img id="logo" src="../assets/LOGO/LLOGO BLANCO.png" height="73px">
+        </div>
+        <div id="fecha">
+            <p>Lunes 16 de noviembre del 2020,Lima-Perú</p>
+        </div>
+    </div>
+    <div class="menu_bar" [ngClass]="{'mostrar': flag}">
+        <div>
+            <a (click)="onLogut()"><img id="logobar" src="../assets/ICONOS/64572.png" alt="" width="50px"/></a>
+        </div>
+        <div id="bar">
+            <p id="titubar">Bienvenido,</p>
+            <P id="rolbar">ADMIN</P>
+           <a id="btn_bar" (click)="abrir()" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+              <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+            </svg><i class="bi bi-caret-down-fill"></i></a>
+
+        </div>
+        <div class="most" [ngClass]="{'mos': flag_men}">
+            <div *ngFor="let path of rutas ">
+                <!-- <div *ngIf="path.per_uri === 'cliente' && puedeVer " id="separado" class="cliente"><a [routerLink] = "['/usuaCliente']"><img id="imagen" src="../assets/ICONOS/ICONO1.png" width="45px" height="45px"></a></div> -->
+                <div id="back" *ngIf = "path.per_uri === 'cliente'" class="cliente"><a id="sepa" [routerLink] = "['/usuaCliente']">Administracion</a></div>
+                <div id="back" *ngIf = "path.per_uri === 'stock'"   class=""><a id = "sepa" [routerLink] = "['/stock']">Stock</a></div>
+                <div id="back" *ngIf = "path.per_uri === 'ordenes'"   class=""><a id = "sepa" [routerLink] = "['/ordenes']">Ordenes</a></div>
+                <div id="back" *ngIf = "path.per_uri === 'movimientos'"  class=""><a id = "sepa" [routerLink] = "['/movimientos']">Movimientos</a></div>
+            </div>
+            <div id="back" class="">
+                <a id="sepa" [routerLink] = "['/solicitud']">Solicitudes</a>
+            </div>
+        
+        </div>
+
+    </div>
+</header>

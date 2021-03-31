@@ -1,0 +1,36 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" style="padding-top:10px" class="table table-striped table-bordered row-border hover">
+  <thead>
+    <tr style="background:#E6E6E6">
+      <th>Razón social</th>
+      <th>Cod.SAP</th>
+      <th>Ruta</th>
+      <th>Centro</th>
+      <th>Org.de ventas</th>
+      <th>Puesto expedición</th>
+      <th>Puesto planificación</th>
+      <th>Tipo</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="cursor:pointer" *ngFor="let clie of cliente" [routerLink] = "['/administrar',clie.cli_cod_sap]">
+      <td style="padding-left: 21px;
+    position: relative;">{{ clie.cli_raz_soc}}</td>
+      <td style="padding-left: 21px;
+    position: relative;">{{ clie.cli_cod_sap}}</td>
+      <td style="padding-left: 21px;
+    position: relative;">{{ clie.cli_rut }}</td>
+      <td style="padding-left: 21px;
+    position: relative;">{{ clie.cli_cen }}</td>
+      <td style="padding-left: 21px;
+    position: relative;">{{ clie.cli_org_ven }}</td>
+      <td style="padding-left: 21px;
+    position: relative;">{{ clie.cli_pue_exp }}</td>
+      <td style="padding-left: 21px;
+    position: relative;">{{ clie.cli_pue_pla }}</td>
+      <td style="padding-left: 21px;
+    position: relative;">CLIENTE</td>
+
+    </tr>
+  </tbody>
+</table>

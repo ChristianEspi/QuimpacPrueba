@@ -1,0 +1,80 @@
+<app-cabecera></app-cabecera>
+<app-menu></app-menu>
+<section id="contenido">
+    <div id="soli">
+        <div id="posi"><a href="#"><img src="../assets/ICONOS/ICONO2.png" width="40px" height="40px"></a></div>
+        <div id="titulo" class="text">Movimientos</div>
+        <div class="btnStock">
+          <input type="submit"(click)="buscarSotckClie()" class="btn btn-primary form-control desctanq" name="btnStock" value="Buscar"/>
+        </div>
+    </div>
+    <div [formGroup]="enviaForm" class="filtro">
+        <div class="DesSelector">
+          <label class="font-weight-bold">Desc.Tanque:</label>
+          <input type="text" formControlName="des_alm" class="form-control" name="des_alm">
+
+        </div>
+        <div class="DesMaterial">
+          <label class="font-weight-bold">Desc.Material:</label>
+          <input type="text" formControlName="des_mat" class="form-control" name="des_mat">
+        </div>
+        <div class="DesLote">
+          <label class="font-weight-bold">Lote:</label>
+          <input type="text" formControlName="num_lot" class="form-control" name="num_lot">
+        </div>
+        <div class="ScvPre">
+          <label class="font-weight-bold">Serv.Prestado:</label>
+          <input type="text" formControlName="ser_pre" class="form-control" name="ser_pre">
+        </div>
+        <div class="buquepla">
+          <label class="font-weight-bold">Buque/placa:</label>
+          <input type="text" formControlName="cli_buq" class="form-control" name="cli_buq">
+        </div>
+        <div class="fecMovi">
+          <label class="font-weight-bold">Fecha Movimiento:</label>
+          <div id="sepa">
+            <div id="fechaDes">
+              <label id="des" class="font-weight-bold">desde:</label>
+              <input class="form-control"formControlName="fec_mov_des" type="date" name="fec_mov_des" value="">
+            </div>
+            <div id="fechahas">
+              <label id="des" class="font-weight-bold">Hasta:</label>
+              <input class="form-control"formControlName="fec_mov_has" type="date" name="fec_mov_has" value="fechaActual">
+            </div>
+          </div>
+        </div>
+        <div class="fecllega">
+          <label class="font-weight-bold">Fecha Llegada:</label>
+          <div id="sepa">
+            <div id="fechaDes">
+              <label id="des" class="font-weight-bold">desde:</label>
+              <input class="form-control" formControlName="fec_lle_des" type="date" name="fec_lle_des" value="">
+            </div>
+            <div id="fechahas">
+              <label id="des" class="font-weight-bold">Hasta:</label>
+              <input class="form-control" formControlName="fec_lle_has" type="date" name="fec_lle_has" value="">
+            </div>
+          </div>
+        </div>
+        <div class="fechaSali">
+          <label class="font-weight-bold">Fecha Salida:</label>
+          <div id="sepa">
+            <div id="fechaDes">
+              <label id="des" class="font-weight-bold">desde:</label>
+              <input class="form-control" type="date" formControlName="fec_sal_des" name="fec_sal_des" value="">
+            </div>
+            <div id="fechahas">
+              <label id="des" class="font-weight-bold">Hasta:</label>
+              <input class="form-control" type="date" formControlName="fec_sal_has" name="fec_sal_has" value="">
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+<div id="tbCrearNuevo" class="">
+    <div id="linea">
+    </div>
+    <div id="tabla"class="container-fluid">
+      <app-tabla-stock-cliente [data]="stockClie"></app-tabla-stock-cliente>
+    </div>
+</div>

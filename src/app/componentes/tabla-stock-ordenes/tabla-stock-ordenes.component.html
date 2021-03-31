@@ -1,0 +1,32 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" style="padding-top:10px" class="table datatable table-bordered row-border hover">
+  <thead>
+    <tr style="background:#E5E5E5">
+      <th>Orden</th>
+      <th>Material</th>
+      <th>Descripción Material</th>
+      <th>Servicio Prestamo</th>
+      <th>Fecha Plan Inicio</th>
+      <th>Fecha Real Inicio</th>
+      <th>Hora Real inicio</th>
+      <th>Cantidad</th>
+      <th>Destino</th>
+      <th>Origen</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of data">
+      <td>{{ e.ord_cod }}</td>
+      <td>{{ e.ord_num_mat }}</td>
+      <td>{{ e.ord_des_mat }}</td>
+      <td>{{ e.ord_val_2 }}</td>
+      <td>{{ e.ord_fec_reg }}</td>
+      <td>{{ e.ord_fec_fin_pla }}</td>
+      <td>{{ e.ord_can_pro }}</td>
+      <td>{{ e.ord_des_mat }}</td>
+      <td>{{ e.ord_des }}</td>
+      <td>{{ e.ord_ori }}</td>
+      <td>{{ e.ord_est }}</td>
+    </tr>
+  </tbody>
+</table>

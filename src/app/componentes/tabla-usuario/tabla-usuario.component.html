@@ -1,0 +1,28 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" style="padding-top:10px" class="table datatable table-bordered row-border hover">
+  <thead>
+    <tr style="background:#E5E5E5">
+      <th></th>
+      <th>Nombres y apellidos</th>
+      <th>Cod.SAP</th>
+      <th>Usuario</th>
+      <th>Clave</th>
+      <th>Cod.Rol</th>
+      <th>Rol</th>
+      <th>Estado</th>
+      <th>Tipo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of data">
+      <td><a [routerLink] = "['/']"><img id="imagen" src="../assets/ICONOS/blue.png" (click)='abrirPopEd(e.usu_cod_sap)' width="20px" height="20px"></a></td>
+      <td>{{ e.usu_nom_ape }}</td>
+      <td>{{ e.usu_cod_sap }}</td>
+      <td>{{ e.usu_usu }}</td>
+      <td>{{ e.usu_cla }}</td>
+      <td>{{ e.usu_cod_rol }}</td>
+      <td>{{e.usu_cod_rol}}</td>
+      <td>{{ e.usu_est }}</td>
+      <td>USUARIO</td>
+    </tr>
+  </tbody>
+</table>

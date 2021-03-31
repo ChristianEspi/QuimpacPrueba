@@ -1,0 +1,40 @@
+<app-cabecera></app-cabecera>
+<app-menu></app-menu>
+<section id="contenido">
+    <div id="soli">
+        <div id="posi"><a href="#"><img src="../assets/ICONOS/Capa 7 copia.png" width="40px" height="40px"></a></div>
+        <div id="titulo" class="text">Stock</div>
+        <div class="btnStock">
+          <input (click)="stock()" type="submit" class="btn btn-primary form-control desctanq" name="btnStock" value="Buscar"/>
+        </div>
+    </div>
+    <div [formGroup]="enviaStock" class="filtro">
+      <div class="row forma">
+        <div class="col">
+          <div class="DesSelector">
+            <label class="font-weight-bold">Desc.Tanque:</label>
+            <input formControlName="tan" class="form-control desctanq" name="tan"/>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="DesMaterial">
+            <label class="font-weight-bold">Desc.Material:</label>
+            <input formControlName="des_mat" class="form-control descmate" name="des_mat"/>
+          </div>
+        </div>
+        <div class="col">
+          <div class="DesLote">
+            <label class="font-weight-bold">Lote:</label>
+            <input formControlName="lot" class="form-control " name="lot"/>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<div id="tbCrearNuevo" class="">
+    <div id="linea">
+    </div>
+    <div id="tabla"class="container-fluid">
+      <app-tabla-stock [data]="stockB"></app-tabla-stock>
+    </div>
+</div>
