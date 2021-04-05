@@ -41,7 +41,6 @@ export class TablaClienteComponent implements OnInit ,OnDestroy{
       listcliente.push(client)
       this.cliente=listcliente;
       this.dtTrigger.next();
-      console.log(this.cliente);
     })
   }
   }

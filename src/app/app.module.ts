@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID,NgModule } from '@angular/core';
 import { HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,9 +33,18 @@ import { TablaStockClienteComponent } from './componentes/tabla-stock-cliente/ta
 import { TablaStockComponent } from './componentes/tabla-stock/tabla-stock.component';
 import { StockOrdenesComponent } from './componentes/stock-ordenes/stock-ordenes.component';
 import { TablaStockOrdenesComponent } from './componentes/tabla-stock-ordenes/tabla-stock-ordenes.component';
+import { TablaChoferComponent } from './componentes/tabla-chofer/tabla-chofer.component';
+import { ChoferComponent } from './componentes/chofer/chofer.component';
 //servicios
 import {StockService} from './servicios/stock.service';
 import { DatePipe } from '@angular/common';
+//fecha
+import localeEs from '@angular/common/locales/es';
+import {registerLocaleData} from '@angular/common';
+import { VehiculoComponent } from './componentes/vehiculo/vehiculo.component';
+import { TablaVehiculoComponent } from './componentes/tabla-vehiculo/tabla-vehiculo.component';
+
+registerLocaleData(localeEs,'es');
 
 @NgModule({
   declarations: [
@@ -56,6 +65,10 @@ import { DatePipe } from '@angular/common';
     TablaStockComponent,
     StockOrdenesComponent,
     TablaStockOrdenesComponent,
+    TablaChoferComponent,
+    ChoferComponent,
+    VehiculoComponent,
+    TablaVehiculoComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +85,9 @@ import { DatePipe } from '@angular/common';
     RouterModule,
   ],
   exports:[ReactiveFormsModule,DialogConfirComponent],
-  providers: [ClientesService,DatePipe],
+  providers: [ClientesService,DatePipe,TablaChoferComponent,TablaVehiculoComponent,
+              {provide:LOCALE_ID,useValue:'es'},
+            ],
   bootstrap: [AppComponent],
   entryComponents:[DialogConfirComponent]
 })

@@ -24,11 +24,9 @@ export class TablaUsuarioComponent implements OnInit,OnDestroy{
    };
     this.dtTrigger.next();
   }
-  abrirPopEd(id:string){
-    this.usuCom.abrirPopEd(id);
+  abrirPopEd(id:string,i:number){
+    this.usuCom.abrirPopEd(id,i);
   }
-
-
   ngOnDestroy(): void {
   // Do not forget to unsubscribe the event
   this.dtTrigger.unsubscribe();

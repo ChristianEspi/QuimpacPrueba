@@ -1,3 +1,7 @@
+.titulo{
+	position: fixed;
+	margin: 10px;
+}
 #menu{
 	position: fixed;
 	background: #36B34B;

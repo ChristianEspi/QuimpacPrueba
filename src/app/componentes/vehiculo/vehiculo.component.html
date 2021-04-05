@@ -1,0 +1,100 @@
+<app-cabecera></app-cabecera>
+<app-menu></app-menu>
+<!-- formulario Chofer -->
+<form [formGroup]="formVehi">
+  <div id="" class="ventana"[ngClass]="{'cerrarAc':abrir}">
+      <div id="titu">
+          <div>
+          <div>
+              <h2>Datos del Vehiculo</h2>
+          </div>
+          <button  (click)="cerrarPop()" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">X</span>
+          </button>
+          <div id="posi">
+              <input id="btn_modificar" (click)="crearvehi()" type="button" class="btn btn-primary btn-block-xs-only " value="Guardar">
+              <input id="btn_modificar" [ngClass]="{'ocul':btnM}" (click)="actualizarvehi()" type="button" class="btn btn-primary btn-block-xs-only " value="Modificar">
+          </div>
+          </div>
+      </div>
+      <div>
+          <div  class="" id="cle">
+            <div class="col-md-9 centrar">
+                <div class="form-group row mt-2" id="espaciado">
+                    <input type="hidden" class="col-12 col-md form-control" formControlName="veh_cod" placeholder="cho_cod">
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Nombre</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="veh_nom" placeholder="Nombre y apellidos">
+                    <div class="alert-danger" *ngIf="veh_nom.invalid &&(veh_nom.dirty || veh_nom.touched)">
+                      <div class="container-error-message">
+                          Nombre requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Placa</label>
+                    <input type="text" class="col-12 col-md form-control"formControlName="veh_pla_veh" placeholder="Cód.SAP">
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Condicion Busqueda</label>
+                    <input type="email"  class="col-12 col-md form-control" formControlName="veh_con_bus" placeholder="Condicion busq.">
+                    <div class="alert-danger" *ngIf="veh_con_bus.invalid &&(veh_con_bus.dirty || veh_con_bus.touched)">
+                      <div class="container-error-message">
+                          Condicion de busqueda requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">País</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="veh_pai" placeholder="Pais"/>
+                    <div class="alert-danger" *ngIf="veh_pai.invalid &&(veh_pai.dirty || veh_pai.touched)">
+                      <div class="container-error-message">
+                          Pais requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Idioma</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="veh_idi" placeholder="Idioma">
+                    <div class="alert-danger" *ngIf="veh_idi.invalid &&(veh_idi.dirty || veh_idi.touched)">
+                      <div class="container-error-message">
+                          idioma requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">N° identificacion</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="veh_est_reg" placeholder="N° Identificacion">
+                    <div class="alert-danger" *ngIf="veh_est_reg.invalid &&(veh_est_reg.dirty || veh_est_reg.touched)">
+                      <div class="container-error-message">
+                          N° Indentificacion requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio"class="col-12 col-md-4 font-weight-bold">Estado</label>
+                  <!--  <input type="text"class="col-12 col-md form-control" formControlName="usu_est" placeholder="Estado">-->
+                    <select  formControlName="veh_est" class="mx-2 col-12 col-md form-control" name="estado">
+                      <option [value]="1" [selected]='true'>Activo</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</form>
+
+<section id="contenido">
+    <div id="admClie">
+        <div id="posImg"><img src="../assets/ICONOS/bluc.png" width="40px" height="40px"></div>
+        <div id="titulo" class="text">Administrar Vehiculo</div>
+        <div id="posbtn"class="">
+            <input id="boton" (click)="abrirPop()" type="button" class="btn btn-success btn-block-xs-only"name="nuevo" value="Nuevo">
+        </div>
+    </div>
+</section>
+<!-- Tabla de Clientes Angular-->
+<div id="tabla" class="container-fluid">
+  <app-tabla-vehiculo></app-tabla-vehiculo>
+</div>

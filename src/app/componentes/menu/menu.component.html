@@ -4,14 +4,18 @@
    </div>
     <div *ngFor="let path of rutas ">
         <!-- <div *ngIf="path.per_uri === 'cliente' && puedeVer " id="separado" class="cliente"><a [routerLink] = "['/usuaCliente']"><img id="imagen" src="../assets/ICONOS/ICONO1.png" width="45px" height="45px"></a></div> -->
-        <div *ngIf="path.per_uri === 'cliente'" id="separado" class="cliente"><a [routerLink] = "['/usuaCliente']"><img id="imagen" src="../assets/ICONOS/ICONO1.png" width="45px" height="45px"></a></div>
-        <div *ngIf="path.per_uri === 'stock'"  id="separado" class=""><a [routerLink] = "['/stock']"><img id="imagen" src="../assets/ICONOS/Capa 7.png"  width="45px" height="45px"></a></div>
-        <div *ngIf="path.per_uri === 'ordenes'"  id="separado" class=""><a [routerLink] = "['/ordenes']"><img id="imagen" src="../assets/ICONOS/Capa 11 copia 2.png"  width="45px" height="45px"></a></div>
-        <div *ngIf="path.per_uri === 'movimientos'"  id="separado" class=""><a [routerLink] = "['/movimientos']"><img id="imagen" src="../assets/ICONOS/MOV 2.png"  width="45px" height="45px"></a></div>
+        <div *ngIf="path.per_uri === 'cliente' && estCli == '1' " id="separado" class="cliente"><a [routerLink] = "['/usuaCliente']"><img title="Clientes" id="imagen" src="../assets/ICONOS/ICONO1.png" width="45px" height="45px"></a></div>
+
+        <div *ngIf="path.per_uri === 'stock' && estStk == '1'"  id="separado" class=""><a [routerLink] = "['/stock']"><img title="Stock" id="imagen" src="../assets/ICONOS/Capa 7.png"  width="45px" height="45px"></a></div>
+
+        <div *ngIf="path.per_uri === 'ordenes' && estMov == '1'"  id="separado" class=""><a [routerLink] = "['/ordenes']"><img title="Ordenes" id="imagen" src="../assets/ICONOS/Capa 11 copia 2.png"  width="45px" height="45px"></a></div>
+
+        <div *ngIf="path.per_uri === 'movimientos' && estOrd == '1'"  id="separado" class=""><a  [routerLink] = "['/movimientos']"><img title="Movimientos" id="imagen" src="../assets/ICONOS/MOV 2.png"  width="45px" height="45px"></a></div>
+
     </div>
     <div id="separado" class="" hidden><a [routerLink] = "['/solicitud']"><img id="imagen" src="../assets/ICONOS/Capa 8.png"  width="45px" height="45px"></a></div>
     <div id="cerrarSesion" class="">
-        <div style="cursor:pointer" (click)="mostrarDialogo()"><a><img id="imagen" src="../assets/ICONOS/cerrar-sesion.png"  width="45px" height="45px"></a></div>
+        <div style="cursor:pointer" (click)="mostrarDialogo()"><a><img id="imagen" src="../assets/ICONOS/session.png"  width="45px" height="45px"></a></div>
     </div>
 
     <div id="inferior" class="" hidden>

@@ -14,10 +14,10 @@
             <span aria-hidden="true">&times;</span>
           </button>
           <div>
-              <input id="btn_modificar" style="margin:10px"[ngClass]="{'ocul': flagPer}" (click)="guardarRol()" type="button" class="btn btn-primary btn-block-xs-only " value="Guar. Rol">
-              <input id="btn_modificar" style="margin:10px"[ngClass]="{'ocul': !flagPerG}"(click)="crearRolPermiso()" type="button" class="btn btn-primary btn-block-xs-only " value="Guar. Per.">
-              <input id="btn_modificar" style="margin:10px"[ngClass]="{'ocul': !flagPerM}"(click)="actualizarRolPermiso()" type="button" class="btn btn-primary btn-block-xs-only " value="Modif.RolPer">
-              <input id="btn_modificar" style="margin:10px"[ngClass]="{'ocul': flagRolM}"  type="button" class="btn btn-primary btn-block-xs-only" (click)="actualizaRol()" value="Guar.Cambios">
+              <input id="btn_modificar" style="margin:10px"[ngClass]="{'ocul': flagPer}" (click)="guardarRol()" type="button" class="btn btn-primary btn-block-xs-only " value="Guardar">
+              <input id="btn_modificar" style="margin:10px"[ngClass]="{'ocul': !flagPerG}"(click)="crearRolPermiso()" type="button" class="btn btn-primary btn-block-xs-only " value="Guardar">
+              <input id="btn_modificar" style="margin:10px"[ngClass]="{'ocul': !flagPerM}"(click)="actualizarRolPermiso()" type="button" class="btn btn-primary btn-block-xs-only " value="Modificar">
+              <input id="btn_modificar" style="margin:10px"[ngClass]="{'ocul': flagRolM}"  type="button" class="btn btn-primary btn-block-xs-only" (click)="actualizaRol()" value="Modificar">
           </div>
           </div>
       </div>
@@ -80,7 +80,9 @@
           </button>
           <div>
               <input id="btn_modificar" [ngClass]="{'ocul': !flag}" (click)="guardarUsua()" type="button" class="btn btn-primary btn-block-xs-only " value="Guardar">
-              <input id="btn_rol" [ngClass]="{'ocul': !flag}" (click)="nuevoRol()" type="button" class="btn btn-primary btn-block-xs-only " value="Nuevo Rol">
+              <div class="" *ngIf="mostrar == true" >
+                <input id="btn_rol" [ngClass]="{'ocul': !flag}" (click)="nuevoRol()" type="button" class="btn btn-primary btn-block-xs-only " value="Nuevo Rol">
+              </div>
               <input id="btn_modificar" [ngClass]="{'ocul': flag}" (click)="actualizarUsuario()" type="button" class="btn btn-primary btn-block-xs-only " value="Modificar">
           </div>
           </div>
@@ -102,7 +104,7 @@
                 </div>
                 <div class="form-group row mt-2" id="espaciado">
                     <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Cód.SAP</label>
-                    <input type="text"  class="col-12 col-md form-control" formControlName="usu_cod_sap" placeholder="Cód.SAP" disabled>
+                    <input type="text" [(ngModel)]="cliente.cli_cod_sap" class="col-12 col-md form-control"formControlName="usu_cod_sap" placeholder="Cód.SAP" disabled>
                 </div>
                 <div class="form-group row mt-2" id="espaciado">
                     <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Email</label>
@@ -198,7 +200,7 @@
                         <div class="col-12 col-md-4" id="cos2">
                             <div class="row mt-2" id="espaciado">
                                 <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Cód.SAP</label>
-                                <input type="text" class="mx-2 col-12 col-md form-control" [(ngModel)]="cliente.cli_cod_sap" placeholder="Cod.SAP" disabled>
+                                <input type="text" class="mx-2 col-12 col-md form-control" [(ngModel)]="client.cli_cod_sap" placeholder="Cod.SAP" disabled>
                             </div>
                             <div class="row mt-2" id="espaciado">
                                 <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Puesto expedición</label>

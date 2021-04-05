@@ -5,24 +5,18 @@
       <th>Nombres y apellidos</th>
       <th>Cod.SAP</th>
       <th>Usuario</th>
-      <th>Clave</th>
-      <th>Cod.Rol</th>
       <th>Rol</th>
       <th>Estado</th>
-      <th>Tipo</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let e of data">
-      <td><a [routerLink] = "['/']"><img id="imagen" src="../assets/ICONOS/blue.png" (click)='abrirPopEd(e.usu_cod_sap)' width="20px" height="20px"></a></td>
-      <td>{{ e.usu_nom_ape }}</td>
-      <td>{{ e.usu_cod_sap }}</td>
-      <td>{{ e.usu_usu }}</td>
-      <td>{{ e.usu_cla }}</td>
-      <td>{{ e.usu_cod_rol }}</td>
-      <td>{{e.usu_cod_rol}}</td>
-      <td>{{ e.usu_est }}</td>
-      <td>USUARIO</td>
+    <tr *ngFor="let e of data;let i index">
+        <td><a [routerLink] = "['/']"><img id="imagen" src="../assets/ICONOS/blue.png" (click)='abrirPopEd(e.usu_cod_sap,i)' width="20px" height="20px"></a></td>
+        <td>{{ e.usu_nom_ape }}</td>
+        <td>{{ e.usu_cod_sap }}</td>
+        <td>{{ e.usu_usu }}</td>
+        <td>{{e.rol_nom}}</td>
+        <td>{{ e.usu_est == 1 ? 'ACTIVO':'INACTIVO'}}</td>
     </tr>
   </tbody>
 </table>

@@ -31,7 +31,11 @@ export class UsuaComponenteComponent implements OnInit {
   flagMdPer=false;
   flagPer=false;
   disa:string;
-  //formUsuario: FormGroup;
+  //formUsuario: FormGroup; boton Nuevo role
+
+  a:number;
+
+
 
   prueba : RolPermisos[];
   selec=[];
@@ -112,11 +116,12 @@ export class UsuaComponenteComponent implements OnInit {
     //Permisos
     per:any
     permi = new RolPermisos();
+
   ngOnInit(): void {
     this.cargaDatosClie();
     this.listarClieCod();
     this.listarRol();
-
+    this.mostrarBtnRol();
     this.permisos=[{
       id:1,
       descripcion:'cliente',
@@ -140,6 +145,7 @@ export class UsuaComponenteComponent implements OnInit {
     this.formCheck = this.formBuilder.group({
       id: this.formBuilder.array([])
     });
+    this.mostrarBtnRol();
   }
   /*Validar formularios*/
   get usu_nom_ape(){
@@ -159,6 +165,15 @@ export class UsuaComponenteComponent implements OnInit {
   get usu_cod_rol(){
     return this.formUsuario.get('usu_cod_rol')
   }
+  mostrar:Boolean;
+  mostrarBtnRol(){
+    let a = JSON.parse(localStorage.getItem('usuario'));
+    if(a[0].usu_cod_sap == 0){
+      this.mostrar=false;
+    }else{
+      this.mostrar=true;
+    }
+  }
 
   /*desabilitar */
   public cargaDatosClie():void{
@@ -168,20 +183,31 @@ export class UsuaComponenteComponent implements OnInit {
 
   listarClieCod():void{
     this.clieServ.getCliente(this.id).subscribe((cliente)=>{this.cliente=cliente;
+      this.client=cliente;
+      //this.listaUsuario();
       this.obtenerUsuario(this.cliente.cli_cod_sap);
-
     });
   }
   obtenerUsuario(id:string):void{
   this.usuScv.getUsuarioCod(id).subscribe((usu)=>{
       this.usuario=usu;
   });
-  }
+}
+/*usu:any;
+listaUsuario(){
+  this.usuScv.getUsuarios().subscribe((usu)=>{
+    this.usu = usu;
+  })
+}
+
 /*-------------------------------------------------------------------------------*/
 abrirPop(){
   this.flag2= true;
   this.flag = true;
-  this.clieServ.getCliente(this.id).subscribe((cliente)=>{
+  this.clieServ.getCliente(this.id).subscribe((client)=>{
+    this.cliente=client;
+    //this.formUsuario.value.usu_cod_sap=(this.cliente.cli_cod_sap);
+    //console.log(this.formUsuario.value.usu_cod_sap)
     let a;
     a = JSON.parse(localStorage.getItem('usuario'));
     if(a[0].usu_cod_sap == "0"){
@@ -199,14 +225,13 @@ abrirPop(){
     }
   });
 }
-abrirPopEd(id:string){
-
+abrirPopEd(id:string,i:any){
+  this.clieServ.getCliente(id).subscribe((client)=>{
+    this.cliente=client;});
   this.flag2= true;
   this.flag = false;
-  this.usuScv.getUsuarioCod(id).subscribe((usuar)=>{this.formUsuario.patchValue(usuar)
-  })
-
-
+  this.formUsuario.patchValue(i)
+  console.log(i);
 }
 
 cerrarPop(){
@@ -235,7 +260,7 @@ guardarUsua(){
     this.datepipe.transform(this.formUsuario.value.usu_fec_cre,'dd/MM/yyyy')
     this.formUsuario.value.usu_fec_mod ="1900-01-01T00:00:00";
     this.formUsuario.value.usu_cod_cli =this.cliente.cli_cod_cli;
-    this.formUsuario.value.usu_cod_sap =this.cliente.cli_cod_sap;
+    formvalue.value.usu_codsap =this.clie.cli_cod_sap;
     this.formUsuario.value.usu_est="1"
     this.usuScv.createUsuario(formvalue).subscribe((res)=>{
     this.usuario=res;
@@ -320,6 +345,8 @@ guardarRol(){
   this.rolSrv.createRol(formValue).subscribe((data)=>{this.nuevorol=data;
   this.listarRol();
   this.flagPer=true;
+  this.flagPerG=true;
+
   },
   error=>{
       this.isErrorRol=true;
@@ -334,12 +361,12 @@ crearRolPermiso(){
   //const formrolper= this.formRolPer.value;
   this.prueba = [];
   //this.formRolPer.value.rol_per_cod_per = this.formCheck.value.id[0];
-  for(var i=0;i<this.formCheck.value.id.length;i++){
+  for(var i=0;i<this.permisos.length ;i++){
     let formlper = new RolPermisos;
     formlper.rol_per_cod=0
-    formlper.rol_per_cod_per = this.formCheck.value.id[i];
+    formlper.rol_per_cod_per = this.permisos[i].id.toString();
     formlper.rol_per_est="1";
-    formlper.rol_per_fec_cre = "30/03/2021"
+    formlper.rol_per_fec_cre ="2021-03-31T00:00:00"
     formlper.rol_per_fec_mod ="1900-01-01T00:00:00"
     formlper.rol_per_usu_cre_sap=this.cliente.cli_cod_sap;
     formlper.rol_per_cod_rol= this.nuevorol.rol_cod;

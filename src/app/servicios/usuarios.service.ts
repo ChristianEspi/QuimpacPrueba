@@ -8,7 +8,7 @@ import { User } from '../modelo/login';
 })
 export class UsuariosService {
   private urlCrear:string='http://192.168.1.16:8086/api/Admin/newusu';
-  private urllistar:string='';
+  private urllistar:string='http://192.168.1.16:8086/api/Admin/usu';
   private urllistarUsuClie:string='http://192.168.1.16:8086/api/Querys/usuarioXCliente'
   private urlUsarioCod:string = 'http://192.168.1.16:8086/api/Admin/buscarUsu'
   private urlActualizar:string = 'http://192.168.1.16:8086/api/Admin/actualizarUsu';

@@ -1,0 +1,28 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" style="padding-top:10px" class="table table-striped table-bordered row-border hover">
+  <thead>
+    <tr style="background:#E6E6E6">
+      <th>Editar</th>
+      <th>Grupo Cuentas</th>
+      <th>Placa</th>
+      <th>Nombre</th>
+      <th>Condicion Busq.</th>
+      <th>pais</th>
+      <th>idioma</th>
+      <th>estado transaccion</th>
+      <th>estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of listvehi">
+      <td><a (click)="abrirPopEditar()"><img id="imagen" src="../assets/ICONOS/blue.png" width="20px" height="20px"></a></td>
+      <td>{{ e.veh_gru_cue }}</td>
+      <td>{{ e.veh_pla_veh }}</td>
+      <td>{{ e.veh_nom }}</td>
+      <td>{{ e.veh_con_bus }}</td>
+      <td>{{ e.veh_pai }}</td>
+      <td>{{ e.veh_idi }}</td>
+      <td>{{ e.veh_est_reg }}</td>
+      <td>{{e.veh_est}}</td>
+    </tr>
+  </tbody>
+</table>

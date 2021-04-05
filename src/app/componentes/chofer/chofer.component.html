@@ -1,0 +1,136 @@
+<app-cabecera></app-cabecera>
+<app-menu></app-menu>
+<!-- formulario Chofer -->
+<form [formGroup]="formChofer">
+  <div id="" class="ventana"[ngClass]="{'cerrarAc':abrir}">
+      <div id="titu">
+          <div>
+          <div>
+              <h2>Datos del Chofer</h2>
+          </div>
+          <button  (click)="cerrarPop()" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">X</span>
+          </button>
+          <div id="posi">
+              <input id="btn_modificar" (click)="crearChofer()" type="button" class="btn btn-primary btn-block-xs-only " value="Guardar">
+              <input id="btn_modificar" [ngClass]="{'ocul':btnM}" (click)="actualizarchofer()" type="button" class="btn btn-primary btn-block-xs-only " value="Modificar">
+          </div>
+          </div>
+      </div>
+      <div>
+          <div  class="" id="cle">
+            <div class="col-md-9 centrar">
+                <div class="form-group row mt-2" id="espaciado">
+                    <input type="hidden" class="col-12 col-md form-control" formControlName="cho_cod" placeholder="cho_cod">
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Nombre y apellidos</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="cho_nom" placeholder="Nombre y apellidos">
+                    <div class="alert-danger" *ngIf="cho_nom.invalid &&(cho_nom.dirty || cho_nom.touched)">
+                      <div class="container-error-message">
+                          Nombre y apellidos requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Cód.SAP</label>
+                    <input type="text" class="col-12 col-md form-control"formControlName="cho_cod_sap_cho" placeholder="Cód.SAP" disabled>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Condicion Busqueda</label>
+                    <input type="email"  class="col-12 col-md form-control" formControlName="cho_con_bus" placeholder="Condicion busq.">
+                    <div class="alert-danger" *ngIf="cho_con_bus.invalid &&(cho_con_bus.dirty || cho_con_bus.touched)">
+                      <div class="container-error-message">
+                          Condicion de busqueda requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">País</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="cho_pai" placeholder="Pais"/>
+                    <div class="alert-danger" *ngIf="cho_pai.invalid &&(cho_pai.dirty || cho_pai.touched)">
+                      <div class="container-error-message">
+                          Pais requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Idioma</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="cho_idi" placeholder="Idioma">
+                    <div class="alert-danger" *ngIf="cho_idi.invalid &&(cho_idi.dirty || cho_idi.touched)">
+                      <div class="container-error-message">
+                          idioma requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">N° identificacion</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="cho_num_ide_fis" placeholder="N° Identificacion">
+                    <div class="alert-danger" *ngIf="cho_num_ide_fis.invalid &&(cho_num_ide_fis.dirty || cho_num_ide_fis.touched)">
+                      <div class="container-error-message">
+                          N° Indentificacion requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Tipo de Nif</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="cho_num_tip_nif" placeholder="Tipo">
+                    <div class="alert-danger" *ngIf="cho_num_tip_nif.invalid &&(cho_num_tip_nif.dirty || cho_num_tip_nif.touched)">
+                      <div class="container-error-message">
+                          Tipo nif requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Per_fis</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="cho_num_per_fis" placeholder="Per Fis">
+                    <div class="alert-danger" *ngIf="cho_num_per_fis.invalid &&(cho_num_per_fis.dirty || cho_num_per_fis.touched)">
+                      <div class="container-error-message">
+                          Per fis requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Cia_Impuesto</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="cho_cia_imp" placeholder="Cia Inpuesto">
+                    <div class="alert-danger" *ngIf="cho_cia_imp.invalid &&(cho_cia_imp.dirty || cho_cia_imp.touched)">
+                      <div class="container-error-message">
+                          Cia impuesto requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio" class="col-12 col-md-4 font-weight-bold">Estado transaccion</label>
+                    <input type="text"  class="col-12 col-md form-control" formControlName="cho_est_reg" placeholder="Estado Trans.">
+                    <div class="alert-danger" *ngIf="cho_est_reg.invalid &&(cho_est_reg.dirty || cho_est_reg.touched)">
+                      <div class="container-error-message">
+                          Estado Transaccion requerido
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-2" id="espaciado">
+                    <label id="tamanio"class="col-12 col-md-4 font-weight-bold">Estado</label>
+                  <!--  <input type="text"class="col-12 col-md form-control" formControlName="usu_est" placeholder="Estado">-->
+                    <select  formControlName="cho_est" class="mx-2 col-12 col-md form-control" name="estado">
+                      <option [value]="1" [selected]='true'>Activo</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</form>
+
+<section id="contenido">
+    <div id="admClie">
+        <div id="posImg"><img src="../assets/ICONOS/bluc.png" width="40px" height="40px"></div>
+        <div id="titulo" class="text">Administrar Chofer</div>
+        <div id="posbtn"class="">
+            <input id="boton" (click)="abrirPop()" type="button" class="btn btn-success btn-block-xs-only"name="nuevo" value="Nuevo">
+        </div>
+    </div>
+</section>
+<!-- Tabla de Clientes Angular-->
+<div id="tabla" class="container-fluid">
+  <app-tabla-chofer></app-tabla-chofer>
+</div>
